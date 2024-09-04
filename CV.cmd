@@ -1,5 +1,5 @@
 @echo off
-set VERSION-CC=0.0.0.0.2
+set VERSION-CCo=0.0.0.0.2
 echo CoreCommands
-echo Version %VERSION-CC%
+echo Version %VERSION-CCo%
 echo:
