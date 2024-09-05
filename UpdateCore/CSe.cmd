@@ -1,10 +1,10 @@
 @echo off
-cd "%root%"
+cd "%ProgramData%\PhoenixOS"
 mkdir Update
-cd %root%\Update
+cd %ProgramData%\PhoenixOS\Update
 wget https://github.com/MrR736/CoreSettings/archive/refs/heads/main.zip
-7za x main.zip -o%root%\Update
-del /s /q "%root%\Update\main.zip"
-xcopy /s /y "%root%\Update\CoreSettings-main" "%core%\CoreSettings"
-rd /s /q "%root%\Update"
+7za x main.zip -o"%ProgramData%\PhoenixOS\Update"
+del /s /q "%ProgramData%\PhoenixOS\Update\main.zip"
+xcopy /s /y "%ProgramData%\PhoenixOS\Update\CoreSettings-main" "%ProgramData%\PhoenixOS\Core\CoreSettings"
+rd /s /q "%ProgramData%\PhoenixOS\Update"
 exit

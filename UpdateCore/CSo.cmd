@@ -1,14 +1,14 @@
-
-cd "%root%"
+@echo off
+cd "%ProgramData%\PhoenixOS"
 mkdir Update
-cd %root%\Update
+cd %ProgramData%\PhoenixOS\Update
 wget https://github.com/MrR736/Core/archive/refs/heads/main.zip
-7za x main.zip -o%root%\Update
-cd %core%
+7za x main.zip -o"%ProgramData%\PhoenixOS\Update"
+cd %ProgramData%\PhoenixOS\Core
 mkdir CoreSotfwares
-del /s /q "%root%\Update\main.zip"
-del /s /q "%core%\CoreSotfwares"
-xcopy /s /y "%root%\Update\Core-main\CoreSotfwares" "%core%\CoreSotfwares"
-rd /s /q "%root%\Update"
-cd %core%
+del /s /q "%ProgramData%\PhoenixOS\Update\main.zip"
+del /s /q "%ProgramData%\PhoenixOS\Core\CoreSotfwares"
+xcopy /s /y "%ProgramData%\PhoenixOS\Update\Core-main\CoreSotfwares" "%ProgramData%\PhoenixOS\Core\CoreSotfwares"
+rd /s /q "%ProgramData%\PhoenixOS\Update"
+cd %ProgramData%\PhoenixOS\Core
 exit

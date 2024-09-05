@@ -1,11 +1,11 @@
 @echo off
-cd "%root%"
+cd "%ProgramData%\PhoenixOS"
 mkdir Update
-cd %root%\Update
+cd %ProgramData%\PhoenixOS\Update
 wget https://github.com/MrR736/Core/archive/refs/heads/main.zip
-7za x main.zip -o%root%\Update
-cd %root%\Update
-copy "%Core%\CoreControls\Txt\del-cp.txt" "%root%\Update"
+7za x main.zip -o"%ProgramData%\PhoenixOS\Update"
+cd %ProgramData%\PhoenixOS\Update
+copy "%ProgramData%\PhoenixOS\Core\CoreControls\Txt\del-cp.txt" "%ProgramData%\PhoenixOS\Update"
 type del-cp.txt >> core.cmd
-start call "%root%\Update\core.cmd"
+start call "%ProgramData%\PhoenixOS\Update\core.cmd"
 exit
