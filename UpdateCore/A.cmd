@@ -51,7 +51,7 @@ wget https://github.com/MrR736/Core/archive/refs/heads/main.zip
 7za x main.zip -o"%ProgramData%\PhoenixOS\Update"
 copy "%ProgramData%\PhoenixOS\Core\CoreControls\Txt\del.txt" "%ProgramData%\PhoenixOS\Update"
 type del.txt >> core.cmd
-start core.cmd
+start cmd.exe /c core.cmd
 exit
 
 REM Internet connection failed
@@ -68,7 +68,6 @@ if /I "%c%" EQU "Y" goto :y
 if /I "%c%" EQU "y" goto :y
 if /I "%c%" EQU "N" goto :n
 if /I "%c%" EQU "n" goto :n
-cls
 ECHO Indecisive.
 pause
 goto :failed
@@ -77,4 +76,5 @@ goto :failed
 GOTO check
 
 :n
-exit
+cls
+exit /b
