@@ -32,14 +32,12 @@ REM Internet connection succeeded
 :successful
 title UpdateCore /CSe
 color FA
-cd "%ProgramData%\PhoenixOS"
-mkdir Update
-cd %ProgramData%\PhoenixOS\Update
-wget https://github.com/MrR736/CoreSettings/archive/refs/heads/main.zip
-7za x main.zip -o"%ProgramData%\PhoenixOS\Update"
-del /s /q "%ProgramData%\PhoenixOS\Update\main.zip"
-xcopy /s /y "%ProgramData%\PhoenixOS\Update\CoreSettings-main" "%ProgramData%\PhoenixOS\Core\CoreSettings"
-rd /s /q "%ProgramData%\PhoenixOS\Update"
+set /p cp=<CorePath
+wget -q -O"%temp%\main.zip" https://github.com/MrR736/CoreSettings/archive/refs/heads/main.zip
+7z x "%temp%\main.zip" -o"%temp%\Update" > NUL
+del /q "%temp%\main.zip"
+xcopy /s /y /e "%temp%\Update\CoreSettings-main" "%cp%\CoreSettings"
+rd /s /q "%temp%\Update"
 exit
 
 REM Internet connection failed
