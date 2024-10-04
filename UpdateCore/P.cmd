@@ -35,7 +35,7 @@ color FA
 set /p cp=<CorePath
 mkdir "%temp%\CoreP"
 copy "CorePath" "%temp%\CoreP"
-.\wget -q -O".\url" "https://raw.githubusercontent.com/MrR736/CoreAbout/refs/heads/main/Url/Core"
+wget -q -O".\url" "https://raw.githubusercontent.com/MrR736/CoreAbout/refs/heads/main/Url/Core"
 set /p url=<url
 del /q ".\url"
 wget -q -O"%temp%\CoreP\Core.csp.xz" %url%
