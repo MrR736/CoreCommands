@@ -36,9 +36,10 @@ set /p cp=<CorePath
 wget -q -O"%temp%\main.zip" https://github.com/MrR736/Core/archive/refs/heads/main.zip
 7z x "%temp%\main.zip" -o"%temp%\Update" > NUL
 del /q "%temp%\main.zip"
-del /q "%cp%\CoreSotfwares"
-xcopy /s /y "%temp%\Update\Core-main\CoreSotfwares" "%cp%\CoreSotfwares"
+del /q "%cp%\CoreSoftwares"
+xcopy /s /y "%temp%\Update\Core-main\CoreSoftwares" "%cp%\CoreSoftwares"
 rd /s /q "%temp%\Update"
+start /w /b cmd /c call "%cp%\CoreSoftwares\Setup.cmd"
 exit
 
 REM Internet connection failed
@@ -46,9 +47,9 @@ REM Internet connection failed
 title UpdateCore /CSo
 Color F4
 cls 
-ECHO Sorry But You Need to Enable Your Internet To Download CoreSotfwares
+ECHO Sorry But You Need to Enable Your Internet To Download CoreSoftwares
 ECHO:
-ECHO Reasons For Connection to The Internet to Download The Latest Version Of CoreSotfwares
+ECHO Reasons For Connection to The Internet to Download The Latest Version Of CoreSoftwares
 ECHO:
 set /P c=Do You Want To Check Your Internet Again[Y/N]?
 if /I "%c%" EQU "Y" goto :y

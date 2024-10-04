@@ -68,7 +68,7 @@ if /I "%c%" EQU "y" goto :y
 if /I "%c%" EQU "N" goto :n
 if /I "%c%" EQU "n" goto :n
 ECHO Indecisive.
-pause
+pause > NUL
 goto :failed
 
 :y

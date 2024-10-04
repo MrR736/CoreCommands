@@ -36,6 +36,8 @@ set /p cp=<CorePath
 wget -q -O"%temp%\main.zip" https://github.com/MrR736/CoreSettings/archive/refs/heads/main.zip
 7z x "%temp%\main.zip" -o"%temp%\Update" > NUL
 del /q "%temp%\main.zip"
+rd /s /q "%cp%\CoreSettings"
+mkdir "%cp%\CoreSettings"
 xcopy /s /y /e "%temp%\Update\CoreSettings-main" "%cp%\CoreSettings"
 rd /s /q "%temp%\Update"
 exit
