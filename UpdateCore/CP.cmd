@@ -46,9 +46,9 @@ REM Internet connection failed
 title UpdateCore /CP
 Color F4
 cls 
-ECHO Sorry But You Need to Enable Your Internet To Download CorePanel
+ECHO Sorry But You Need to Enable Your Internet To Download CorePrompt
 ECHO:
-ECHO Reasons For Connection to The Internet to Download The Latest Version Of CorePanel
+ECHO Reasons For Connection to The Internet to Download The Latest Version Of CorePrompt
 ECHO:
 set /P c=Do You Want To Check Your Internet Again[Y/N]?
 if /I "%c%" EQU "Y" goto :y
